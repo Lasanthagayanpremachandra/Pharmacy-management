@@ -69,7 +69,7 @@ const registerPatient = async (req, res) => {
       totalAmount: 0,
     });
 
-    const customer = await createStripeCustomer({ Email, Name, MobileNumber });
+    // const customer = await createStripeCustomer({ Email, Name, MobileNumber });
 
     const patient = new Patient({
       Username,
@@ -84,7 +84,7 @@ const registerPatient = async (req, res) => {
       EmergencyContactMobile,
       EmergencyContactRelation,
       addresses: [address],  // Add the address to the addresses array
-      StripeCustomerId: customer.id,
+      StripeCustomerId: 0,
       cart: newCart
     });
 
